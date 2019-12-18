@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-const styles = StyleSheet.create({
+const styls = StyleSheet.create({
   menu: {
     alignItems: 'center',
     paddingTop: 10,
@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     color: '#FFF',
   },
-});
+})
 
-const Menu = ({ label, children, icon, onPress, textStyle, index, params }) => {
-  return (
+const Menu = ({label, children, icon, onPress, textStyle, index, params })=>{
+  return(
     <TouchableOpacity onPress={() => { onPress && onPress(index, params); }} style={{ flex: 1 }}>
       <View style={styles.menu}>
         {icon && <View style={styles.icon}>{icon}</View>}
@@ -27,8 +27,8 @@ const Menu = ({ label, children, icon, onPress, textStyle, index, params }) => {
         <Text style={[styles.text, textStyle]}>{label}</Text>
       </View>
     </TouchableOpacity>
-  );
-};
+  )
+}
 
 const Menus = ({ data, onPress }) => {
   return data.map((it, index) => {
