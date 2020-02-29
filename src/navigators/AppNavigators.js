@@ -12,7 +12,7 @@ import Page3 from '../pages/Page3';
 import Page4 from '../pages/Page4';
 import Page5 from '../pages/Page5';
 import HomePage from '../pages/HomePage';
-import SwitchNavigator from '../navigators/SwitchNavigator';
+import SwitchNavigator from './SwitchNavigator';
 
 const DrawerNav = createDrawerNavigator(
   routeConfigMap={
