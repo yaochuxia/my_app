@@ -1,7 +1,7 @@
 import { createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomePage from '../pages/HomePage';
-import Page1 from '../pages/Page1';
+import Page1 from '../pages/PopularPage';
 import Login from '../pages/Login';
 
 const AppStack = createStackNavigator(
