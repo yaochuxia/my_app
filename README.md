@@ -40,7 +40,18 @@
 
 
 
-#### react-navigation 堆栈导航器 
+#### react-navigation 堆栈导航器
+
+`createSwitchNavigator`的用途是一次只显示一个页面。 默认情况下，它不处理返回操作，并在你切换时将路由重置为默认状态
+
+`createSwitchNavigator(RouteConfigs, SwitchNavigatorConfig):`
+
+1. `import { createStackNavigator } from 'react-navigation-stack';` 
+
+2. `import { createBottomTabNavigator,createMaterialTopTabNavigator } from 'react-navigation-tabs';` 
+
+3. `import { createDrawerNavigator,DrawerNavigatorItems }from 'react-navigation-drawer';` 
+
 
 - `createMaterialTopTabNavigator` 顶部导航器 
 - `createBottomTabNavigator` 底部导航器
