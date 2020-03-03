@@ -12,7 +12,7 @@ import FavoritePage from '../pages/FavoritePage';
 import MyPage from '../pages/MyPage';
 
 export default class HomePage  extends Component {
-  _tabNavigator(){
+  _BottomTabNavigator(){
     return createAppContainer(
       createBottomTabNavigator(
         routes = {
@@ -76,14 +76,12 @@ export default class HomePage  extends Component {
             )
             }
           },
-
-
         }
       )
     )
   }
   render(){
-    const _tabNavigator = this._tabNavigator();
+    const _tabNavigator = this._BottomTabNavigator();
     return(
       <_tabNavigator />
     
