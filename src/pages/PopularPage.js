@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer} from 'react-navigation';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
 export default class PopularPage  extends Component {
   render(){
@@ -30,9 +30,21 @@ export default class PopularPage  extends Component {
 }
 class PopularTab extends Component{ 
   render(){
+    const { navigation } = this.props;
     return(
       <View style={styles.container}>
         <Text style={styles.welcome}>PopularPage</Text>
+        <Button 
+          title="修改主题"
+          onPress = {()=>{
+            navigation.setParams({
+              theme:{
+                tintColor: 'yellow',
+                updateTime: new Date().getTime()
+              }
+            })
+          }}
+        />
     </View>
     )
   }
