@@ -3,6 +3,7 @@ import { createAppContainer, createSwitchNavigator} from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomePage from '../pages/HomePage';
 import WelcomePage from '../pages/welcomePage';
+import DetailPage from '../pages/DetailPage';
 
 const InitNavigator = createStackNavigator(
   routeConfigMap={
@@ -22,7 +23,8 @@ const MainNavigator = createStackNavigator(
       navigationOptions:{
         header: null
       }
-    }
+    },
+    DetailPage: DetailPage
   }
 )
 

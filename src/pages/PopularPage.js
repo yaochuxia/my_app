@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer} from 'react-navigation';
 import { View, Text, StyleSheet, Button } from 'react-native';
+import NavigationUtil from '../navigators/NavigationUtil';
 
 export default class PopularPage  extends Component {
   constructor(props){
@@ -49,6 +50,9 @@ class PopularTab extends Component{
     return(
       <View style={styles.container}>
         <Text style={styles.welcome}>PopularPage</Text>
+        <Text onPress = {()=>{
+          navigation.navigate('DetailPage')
+        }}>跳转到详情页面</Text>
         <Button 
           title="修改主题"
           onPress = {()=>{
