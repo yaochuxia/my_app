@@ -4,22 +4,37 @@ import { createAppContainer} from 'react-navigation';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
 export default class PopularPage  extends Component {
+  constructor(props){
+    super(props);
+    this.tabNames = ['JAVA', 'Android', 'IOS', 'React', 'React Native',' PHP'];
+  }
+  _getTabs(){
+    const tabs = {};
+    this.tabNames.forEach((item,index)=>{
+      tabs[`tab${index}`] = {
+        screen: props => <PopularTab {...props} tabLabel={item} />,
+        navigationOptions:{
+          title: item,
+        }
+      }
+    });
+    return tabs;
+  } 
   render(){
     const _TopTabNavigator = createAppContainer(createMaterialTopTabNavigator(
-      routes= {
-        PopularPage1:{
-          screen: PopularTab,
-          navigationOptions:{
-            title: 'Tab1'
-          }
-        },
-        PopularPage2:{
-          screen: PopularTab,
-          navigationOptions:{
-            title: 'Tab2'
-          }
-        },
-      }
+     this._getTabs(),
+     config={
+       tabBarOptions: {
+         tabStyle: styles.tabStyle,
+         upperCaseLabel: false,
+         scrollEnabled: true,
+         style:{
+           backgroundColor: '#a68',
+         },
+         indicatorStyle: styles.indicatorStyle,
+         labelStyle: styles.labelStyle,
+       }
+     }
     ))
     return(
       <View style={styles.container}>
@@ -58,5 +73,17 @@ const styles = StyleSheet.create({
   welcome:{
     fontSize: 20,
     margin: 10,
+  },
+  tabStyle: {
+    minWidth: 50
+  },
+  indicatorStyle:{
+    height: 2,
+    backgroundColor: '#fff'
+  },
+  labelStyle:{
+    fontSize: 13,
+    marginTop: 6,
+    marginBottom: 6
   }
 })
