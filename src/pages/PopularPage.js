@@ -46,17 +46,16 @@ export default class PopularPage  extends Component {
 }
 class PopularTab extends Component{ 
   render(){
-    const { navigation } = this.props;
     return(
       <View style={styles.container}>
         <Text style={styles.welcome}>PopularPage</Text>
         <Text onPress = {()=>{
-          navigation.navigate('DetailPage')
+          NavigationUtil.goPage({},'DetailPage')
         }}>跳转到详情页面</Text>
         <Button 
           title="修改主题"
           onPress = {()=>{
-            navigation.setParams({
+            this.props.navigation.setParams({
               theme:{
                 tintColor: 'yellow',
                 updateTime: new Date().getTime()
@@ -72,7 +71,7 @@ class PopularTab extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 30
+    marginTop: 40
   },
   welcome:{
     fontSize: 20,
