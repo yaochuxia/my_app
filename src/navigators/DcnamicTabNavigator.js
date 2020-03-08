@@ -24,7 +24,7 @@ const TBAS = {
       <MaterialIcons 
         name={'whatshot'} 
         size={26}  
-        style={{color: focused ? 'orange' : tintColor}}
+        style={{color: tintColor}}
       />
     )
     }
