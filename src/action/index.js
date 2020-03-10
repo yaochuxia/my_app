@@ -1,5 +1,5 @@
-import { onTheneChange } from './theme';
+import { onThemeChange } from './theme';
 
 export default {
-  onTheneChange,
+  onThemeChange,
 }

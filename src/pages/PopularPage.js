@@ -3,8 +3,11 @@ import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer} from 'react-navigation';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import NavigationUtil from '../navigators/NavigationUtil';
+import {connect} from 'react-redux';
+import actions from '../action';
 
-export default class PopularPage  extends Component {
+
+class PopularPage  extends Component {
   constructor(props){
     super(props);
     this.tabNames = ['JAVA', 'Android', 'IOS', 'React', 'React Native',' PHP'];
@@ -55,12 +58,7 @@ class PopularTab extends Component{
         <Button 
           title="修改主题"
           onPress = {()=>{
-            this.props.navigation.setParams({
-              theme:{
-                tintColor: 'yellow',
-                updateTime: new Date().getTime()
-              }
-            })
+            this.props.onThemeChange('green')
           }}
         />
     </View>
@@ -90,3 +88,9 @@ const styles = StyleSheet.create({
     marginBottom: 6
   }
 })
+
+const mapDispatchToProps = dispatch=>({
+  onThemeChange: theme=>dispatch(actions.onThemeChange(theme))
+})
+
+export default connect(null,mapDispatchToProps)(PopularPage);
