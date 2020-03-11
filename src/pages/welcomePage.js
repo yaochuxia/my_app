@@ -2,14 +2,12 @@ import React, {Component} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 // import NavigationUtil from '../navigators/NavigationUtil';
 
-export default class WelcomePage extends Component {
+class WelcomePage extends Component {
   componentDidMount(){
     this.timer = setTimeout(()=>{
       // 跳转到首页
       const {navigation} = this.props;
       navigation.navigate('Main')
-
-      // NavigationUtil.resetToHomePage(this.props)
     }, 2000)
   }
   componentWillMount(){
@@ -32,3 +30,4 @@ const styles = StyleSheet.create({
     alignItems: "center",
   }
 })
+export default WelcomePage

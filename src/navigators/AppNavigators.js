@@ -1,7 +1,7 @@
 import { createAppContainer, createSwitchNavigator} from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomePage from '../pages/HomePage';
-import WelcomePage from '../pages/welcomePage';
+import WelcomePage from '../pages/WelcomePage';
 import DetailPage from '../pages/DetailPage';
 
 const InitNavigator = createStackNavigator(
