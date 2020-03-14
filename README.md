@@ -57,6 +57,3 @@
 - `createBottomTabNavigator` 底部导航器
 - `createDrawerNavigator` 抽屉导航器
 - `createSwitchNavigator` 切换导航器
-
-
-
